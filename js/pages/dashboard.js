@@ -23,32 +23,32 @@ function lineChart() {
   let grid = "", labels = "";
   for (let g = 0; g <= 4; g++) {
     const v = (max / 4) * g, yy = y(v);
-    grid += `<line x1="${PADL}" y1="${yy}" x2="${W - PADR}" y2="${yy}" stroke="#E4E7F0" stroke-width="1"/>`;
-    labels += `<text x="${PADL - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#9AA3BC">${v.toString().replace(".", ",")}</text>`;
+    grid += `<line x1="${PADL}" y1="${yy}" x2="${W - PADR}" y2="${yy}" stroke="#3E4265" stroke-width="1"/>`;
+    labels += `<text x="${PADL - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#8FA3B8">${v.toString().replace(".", ",")}</text>`;
   }
   meses.forEach((m, i) => {
-    labels += `<text x="${x(i)}" y="${H - 10}" text-anchor="middle" font-size="10" fill="#9AA3BC">${m}</text>`;
+    labels += `<text x="${x(i)}" y="${H - 10}" text-anchor="middle" font-size="10" fill="#8FA3B8">${m}</text>`;
   });
 
-  const dots = s2026.map((v, i) => `<circle cx="${x(i)}" cy="${y(v)}" r="3.4" fill="#4F46E5" stroke="#fff" stroke-width="1.6"/>`).join("");
+  const dots = s2026.map((v, i) => `<circle cx="${x(i)}" cy="${y(v)}" r="3.4" fill="#2BE8E2" stroke="#2D2E47" stroke-width="1.6"/>`).join("");
 
   return `<svg viewBox="0 0 ${W} ${H}" style="width:100%; height:auto" role="img" aria-label="Receita mensal 2025 vs 2026">
     <defs>
       <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#4F46E5" stop-opacity=".22"/>
-        <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
+        <stop offset="0%" stop-color="#00BAB4" stop-opacity=".30"/>
+        <stop offset="100%" stop-color="#00BAB4" stop-opacity="0"/>
       </linearGradient>
     </defs>
     ${grid}${labels}
     <path d="${area}" fill="url(#areaGrad)"/>
-    <path d="${path(s2025)}" fill="none" stroke="#9AA3BC" stroke-width="2.4" stroke-dasharray="6 5" stroke-linecap="round"/>
-    <path d="${path(s2026)}" fill="none" stroke="#4F46E5" stroke-width="3" stroke-linecap="round"/>
+    <path d="${path(s2025)}" fill="none" stroke="#64788F" stroke-width="2.4" stroke-dasharray="6 5" stroke-linecap="round"/>
+    <path d="${path(s2026)}" fill="none" stroke="#00BAB4" stroke-width="3" stroke-linecap="round"/>
     ${dots}
     <g font-size="11" font-weight="600">
-      <rect x="${PADL + 4}" y="${PADT}" width="12" height="12" rx="3" fill="#4F46E5"/>
-      <text x="${PADL + 22}" y="${PADT + 10}" fill="#131A2E">2026</text>
-      <rect x="${PADL + 66}" y="${PADT}" width="12" height="12" rx="3" fill="#9AA3BC"/>
-      <text x="${PADL + 84}" y="${PADT + 10}" fill="#131A2E">2025</text>
+      <rect x="${PADL + 4}" y="${PADT}" width="12" height="12" rx="3" fill="#00BAB4"/>
+      <text x="${PADL + 22}" y="${PADT + 10}" fill="#F2F6F8">2026</text>
+      <rect x="${PADL + 66}" y="${PADT}" width="12" height="12" rx="3" fill="#64788F"/>
+      <text x="${PADL + 84}" y="${PADT + 10}" fill="#F2F6F8">2025</text>
     </g>
   </svg>`;
 }
@@ -71,35 +71,35 @@ function barChart() {
   let out = "";
   for (let g = 0; g <= 4; g++) {
     const v = (max / 4) * g, yy = base - ((v / max) * ih);
-    out += `<line x1="${PADL}" y1="${yy}" x2="${W - PADR}" y2="${yy}" stroke="#E4E7F0" stroke-width="1"/>`;
-    out += `<text x="${PADL - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#9AA3BC">${v.toString().replace(".", ",")}</text>`;
+    out += `<line x1="${PADL}" y1="${yy}" x2="${W - PADR}" y2="${yy}" stroke="#3E4265" stroke-width="1"/>`;
+    out += `<text x="${PADL - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#8FA3B8">${v.toString().replace(".", ",")}</text>`;
   }
-  out += `<line x1="${PADL}" y1="${base}" x2="${W - PADR}" y2="${base}" stroke="#C9CEE3" stroke-width="1.5"/>`;
+  out += `<line x1="${PADL}" y1="${base}" x2="${W - PADR}" y2="${base}" stroke="#55587D" stroke-width="1.5"/>`;
 
   dados.forEach((d, i) => {
     const bh = (d.v / max) * ih;
     const bx = PADL + slot * i + (slot - barW) / 2;
     out += `<rect x="${bx.toFixed(1)}" y="${(base - bh).toFixed(1)}" width="${barW}" height="${bh.toFixed(1)}" rx="8" fill="url(#barGrad)"/>`;
-    out += `<text x="${(bx + barW / 2).toFixed(1)}" y="${(base - bh - 8).toFixed(1)}" text-anchor="middle" font-size="11.5" font-weight="700" fill="#131A2E">${d.v.toString().replace(".", ",")}</text>`;
-    out += `<text x="${(bx + barW / 2).toFixed(1)}" y="${H - 10}" text-anchor="middle" font-size="10.5" fill="#9AA3BC">${d.canal}</text>`;
+    out += `<text x="${(bx + barW / 2).toFixed(1)}" y="${(base - bh - 8).toFixed(1)}" text-anchor="middle" font-size="11.5" font-weight="700" fill="#F2F6F8">${d.v.toString().replace(".", ",")}</text>`;
+    out += `<text x="${(bx + barW / 2).toFixed(1)}" y="${H - 10}" text-anchor="middle" font-size="10.5" fill="#8FA3B8">${d.canal}</text>`;
   });
 
   return `<svg viewBox="0 0 ${W} ${H}" style="width:100%; height:auto" role="img" aria-label="Receita por canal em R$ milhões">
     <defs><linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#06B6D4"/><stop offset="100%" stop-color="#4F46E5"/>
+      <stop offset="0%" stop-color="#00E0DA"/><stop offset="100%" stop-color="#2F6C82"/>
     </linearGradient></defs>
     ${out}
-    <text x="${PADL}" y="${PADT - 4}" font-size="10.5" fill="#9AA3BC">R$ milhões</text>
+    <text x="${PADL}" y="${PADT - 4}" font-size="10.5" fill="#8FA3B8">R$ milhões</text>
   </svg>`;
 }
 
 // Donut: participação por categoria
 function donutChart() {
   const dados = [
-    { cat: "Eletroportáteis", v: 38, cor: "#4F46E5" },
-    { cat: "Telefonia", v: 27, cor: "#06B6D4" },
-    { cat: "Casa inteligente", v: 21, cor: "#8B5CF6" },
-    { cat: "Acessórios", v: 14, cor: "#F59E0B" },
+    { cat: "Eletroportáteis", v: 38, cor: "#00BAB4" },
+    { cat: "Telefonia", v: 27, cor: "#3E7996" },
+    { cat: "Casa inteligente", v: 21, cor: "#66D9D3" },
+    { cat: "Acessórios", v: 14, cor: "#2F6C82" },
   ];
   const R = 62, C = 2 * Math.PI * R;
   let acc = 0;
@@ -120,10 +120,10 @@ function donutChart() {
   return `
     <div style="display:flex; align-items:center; gap:22px; flex-wrap:wrap">
       <svg viewBox="0 0 160 160" style="width:170px; height:170px; flex-shrink:0" role="img" aria-label="Participação por categoria">
-        <circle cx="80" cy="80" r="${R}" fill="none" stroke="#F1F3F9" stroke-width="22"/>
+        <circle cx="80" cy="80" r="${R}" fill="none" stroke="#3E4265" stroke-width="22"/>
         ${segs}
-        <text x="80" y="76" text-anchor="middle" font-size="21" font-weight="800" fill="#131A2E" font-family="Sora, sans-serif">38%</text>
-        <text x="80" y="92" text-anchor="middle" font-size="9" fill="#9AA3BC">maior categoria</text>
+        <text x="80" y="76" text-anchor="middle" font-size="21" font-weight="800" fill="#F2F6F8" font-family="Montserrat, sans-serif">38%</text>
+        <text x="80" y="92" text-anchor="middle" font-size="9" fill="#8FA3B8">maior categoria</text>
       </svg>
       <div style="flex:1; min-width:180px">${legenda}</div>
     </div>`;
@@ -132,10 +132,10 @@ function donutChart() {
 // Funil de conversão
 function funnelChart() {
   const etapas = [
-    { nome: "Visitantes", v: 320000, cor: "#4F46E5" },
-    { nome: "Viu produto", v: 180000, cor: "#6D5AE8" },
-    { nome: "Carrinho", v: 62000, cor: "#8B5CF6" },
-    { nome: "Compra", v: 24000, cor: "#06B6D4" },
+    { nome: "Visitantes", v: 320000, cor: "#00E0DA" },
+    { nome: "Viu produto", v: 180000, cor: "#00BAB4" },
+    { nome: "Carrinho", v: 62000, cor: "#2F9B96" },
+    { nome: "Compra", v: 24000, cor: "#2F6C82" },
   ];
   const W = 640, H = 240, max = etapas[0].v;
   const Hmid = 46; // altura de cada faixa
@@ -148,8 +148,8 @@ function funnelChart() {
       const pct = ((e.v / max) * 100).toFixed(1).replace(".", ",");
       return `<g>
         <path d="M ${cx - wTop / 2} ${y} L ${cx + wTop / 2} ${y} L ${cx + wBot / 2} ${y + Hmid} L ${cx - wBot / 2} ${y + Hmid} Z" fill="${e.cor}" opacity="${1 - i * 0.13}"/>
-        <text x="${cx - wTop / 2 - 12}" y="${y + Hmid / 2 + 4}" text-anchor="end" font-size="12" fill="#5D6781" font-weight="600">${e.nome}</text>
-        <text x="${cx - wTop / 2 - 12}" y="${y + Hmid / 2 + 18}" text-anchor="end" font-size="10.5" fill="#9AA3BC">${e.v.toLocaleString("pt-BR")} · ${pct}%</text>
+        <text x="${cx - wTop / 2 - 12}" y="${y + Hmid / 2 + 4}" text-anchor="end" font-size="12" fill="#A9BACA" font-weight="600">${e.nome}</text>
+        <text x="${cx - wTop / 2 - 12}" y="${y + Hmid / 2 + 18}" text-anchor="end" font-size="10.5" fill="#8FA3B8">${e.v.toLocaleString("pt-BR")} · ${pct}%</text>
       </g>`;
     }).join("")}
   </svg>`;
@@ -161,13 +161,13 @@ function gaugeChart() {
   const R = 70, CIRC = Math.PI * R;
   return `<svg viewBox="0 0 200 118" style="width:100%; max-width:240px; margin:0 auto" role="img" aria-label="Meta anual atingida">
     <defs><linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#06B6D4"/><stop offset="100%" stop-color="#4F46E5"/>
+      <stop offset="0%" stop-color="#66D9D3"/><stop offset="100%" stop-color="#00BAB4"/>
     </linearGradient></defs>
-    <path d="M 20 100 A ${R} ${R} 0 0 1 180 100" fill="none" stroke="#F1F3F9" stroke-width="17" stroke-linecap="round"/>
+    <path d="M 20 100 A ${R} ${R} 0 0 1 180 100" fill="none" stroke="#3E4265" stroke-width="17" stroke-linecap="round"/>
     <path d="M 20 100 A ${R} ${R} 0 0 1 180 100" fill="none" stroke="url(#gaugeGrad)" stroke-width="17" stroke-linecap="round"
       stroke-dasharray="${((pct / 100) * CIRC).toFixed(1)} ${CIRC.toFixed(1)}"/>
-    <text x="100" y="88" text-anchor="middle" font-size="30" font-weight="800" fill="#131A2E" font-family="Sora, sans-serif">${pct}%</text>
-    <text x="100" y="106" text-anchor="middle" font-size="10" fill="#9AA3BC">da meta anual</text>
+    <text x="100" y="88" text-anchor="middle" font-size="30" font-weight="800" fill="#F2F6F8" font-family="Montserrat, sans-serif">${pct}%</text>
+    <text x="100" y="106" text-anchor="middle" font-size="10" fill="#8FA3B8">da meta anual</text>
   </svg>`;
 }
 

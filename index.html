@@ -13,8 +13,8 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=4">
   <script>window.PAGES = window.PAGES || {};</script>
 </head>
 <body>
@@ -29,15 +29,23 @@
       <a class="brand" href="#home" data-goto="home" title="C12 Technologies — Início">
         <svg class="brand-logo" viewBox="0 0 48 48" aria-label="Logo C12 Technologies">
           <defs>
-            <linearGradient id="lgC12" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#8B5CF6"/>
+            <linearGradient id="lgC12a" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00E0DA"/><stop offset="1" stop-color="#00BAB4"/>
+            </linearGradient>
+            <linearGradient id="lgC12b" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3E7996"/><stop offset="1" stop-color="#252640"/>
             </linearGradient>
           </defs>
-          <rect x="3" y="3" width="42" height="42" rx="12" fill="url(#lgC12)"/>
-          <path d="M31.5 17.2a9 9 0 1 0 .1 13.7" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/>
-          <circle cx="35" cy="24" r="2.4" fill="#22D3EE"/>
+          <rect x="2" y="2" width="44" height="44" rx="12" fill="#2D2E47"/>
+          <g transform="skewX(-6) translate(3 0)">
+            <path d="M40 12 H18 C13 12 10 16 10 24 C10 32 13 36 18 36 H40 V27 H22 C19 27 19 26 19 24 C19 22 19 21 22 21 H40 Z" fill="url(#lgC12a)"/>
+            <path d="M40 36 H18 C13 36 10 32 10 24 L19 24 C19 26 19 27 22 27 H40 Z" fill="url(#lgC12b)"/>
+          </g>
         </svg>
-        <span class="brand-name">C12 <span class="brand-sec">Technologies</span></span>
+        <span class="brand-txt">
+          <span class="brand-name">C<span class="brand-sec">12</span></span>
+          <span class="brand-tag">TECHNOLOGIES</span>
+        </span>
       </a>
     </div>
 
@@ -105,8 +113,8 @@
 <script src="js/pages/solucoes.js?v=2"></script>
 <script src="js/pages/cases.js?v=2"></script>
 <script src="js/pages/metodologia.js?v=2"></script>
-<script src="js/pages/sobre.js?v=3"></script>
-<script src="js/pages/dashboard.js?v=2"></script>
+<script src="js/pages/sobre.js?v=4"></script>
+<script src="js/pages/dashboard.js?v=3"></script>
 <script src="js/pages/contato.js?v=2"></script>
 <script src="js/app.js?v=2"></script>
 </body>

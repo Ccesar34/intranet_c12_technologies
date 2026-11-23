@@ -2,7 +2,7 @@
 
 > **Protótipo navegável com dados fictícios** — Análise de Dados · Business Intelligence · Automação de Processos com vibe coding.
 
-![Status](https://img.shields.io/badge/status-prot%C3%B3tipo-7C3AED) ![Stack](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS%20puro-4F46E5) ![Licen%C3%A7a](https://img.shields.io/badge/licen%C3%A7a-MIT-06B6D4)
+![Status](https://img.shields.io/badge/status-prot%C3%B3tipo-00BAB4) ![Stack](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS%20puro-2D2E47) ![Licen%C3%A7a](https://img.shields.io/badge/licen%C3%A7a-MIT-3E7996)
 
 Site institucional da **C12 Technologies**, consultoria fictícia de dados, BI e automação de processos.
 Construído 100% com **HTML, CSS e JavaScript puros** — sem frameworks, sem build e sem dependências
@@ -26,8 +26,18 @@ Todos os dados (clientes, métricas, pessoas, contatos) são **fictícios**, cri
 
 ## 🎨 Identidade visual
 
-- **Tema claro** com acentos em **indigo/violeta** (`#4F46E5 → #8B5CF6`) e **ciano** (`#06B6D4`)
-- Tipografia: [Sora](https://fonts.google.com/specimen/Sora) (títulos) + [Inter](https://fonts.google.com/specimen/Inter) (texto), com fallback para fontes de sistema
+Baseada na identidade oficial da marca C12 Technologies:
+
+| Cor | Hex | Significado |
+|---|---|---|
+| Azul Petróleo | `#3E7996` | Inovação |
+| Azul Noturno | `#2D2E47` | Confiança (base do tema) |
+| Turquesa | `#00BAB4` | Tecnologia (destaque/ação) |
+| Azul Profundo | `#2F6C82` | Equilíbrio |
+
+- **Tema escuro navy** com acentos em turquesa, seguindo o manual da marca
+- Tipografia: [Montserrat](https://fonts.google.com/specimen/Montserrat) (títulos e texto), com fallback para fontes de sistema
+- Logo geométrico "C" two-tone (turquesa + azul profundo) em SVG inline e favicon
 - Ícones SVG inline · cards com sombras suaves · micro-animações discretas
 
 ## 🗂️ Estrutura do projeto

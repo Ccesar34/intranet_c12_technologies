@@ -76,7 +76,7 @@ window.PAGES.sobre = () => `
         <div class="tags"><span class="tag">Estratégia</span><span class="tag">Vibe coding</span></div>
       </div>
       <div class="card member">
-        <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#06B6D4,#3B82F6)">IO</div>
+        <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#00E0DA,#2F6C82)">IO</div>
         <h3>Isis de Oliveira</h3>
         <span>Head de Dados</span>
         <div class="tags"><span class="tag">Business Intelligence</span><span class="tag">Machine Learning</span></div>
