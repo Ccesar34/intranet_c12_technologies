@@ -67,43 +67,19 @@ window.PAGES.sobre = () => `
   <!-- Time -->
   <section class="section-gap">
     <h2 class="section-title">Time de liderança</h2>
-    <p class="section-sub">Time multidisciplinar fictício, para fins de demonstração</p>
-    <div class="team-grid">
+    <p class="section-sub">Quem conduz os projetos e as entregas da C12</p>
+    <div class="team-grid" style="grid-template-columns: repeat(2, 1fr)">
       <div class="card member">
-        <div class="avatar avatar-lg">LF</div>
-        <h3>Lucas Ferraz</h3>
+        <div class="avatar avatar-lg">CC</div>
+        <h3>Caio Cesar</h3>
         <span>CEO &amp; Fundador</span>
-        <div class="tags"><span class="tag">Estratégia</span><span class="tag">Ex-consultoria Big4</span></div>
+        <div class="tags"><span class="tag">Estratégia</span><span class="tag">Vibe coding</span></div>
       </div>
       <div class="card member">
-        <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#06B6D4,#3B82F6)">MP</div>
-        <h3>Mariana Prado</h3>
+        <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#06B6D4,#3B82F6)">IO</div>
+        <h3>Isis de Oliveira</h3>
         <span>Head de Dados</span>
-        <div class="tags"><span class="tag">Machine Learning</span><span class="tag">PhD Estatística</span></div>
-      </div>
-      <div class="card member">
-        <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#EC4899,#8B5CF6)">RA</div>
-        <h3>Rafael Antunes</h3>
-        <span>Lead de Automação</span>
-        <div class="tags"><span class="tag">Vibe coding</span><span class="tag">Integrações</span></div>
-      </div>
-      <div class="card member">
-        <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#0FA97C,#06B6D4)">CS</div>
-        <h3>Camila Souza</h3>
-        <span>BI &amp; Analytics Lead</span>
-        <div class="tags"><span class="tag">Power BI</span><span class="tag">Storytelling</span></div>
-      </div>
-      <div class="card member">
-        <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#D97706,#EC4899)">JO</div>
-        <h3>João Obata</h3>
-        <span>Engenheiro de Dados</span>
-        <div class="tags"><span class="tag">Pipelines</span><span class="tag">Cloud</span></div>
-      </div>
-      <div class="card member">
-        <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#4F46E5,#06B6D4)">BL</div>
-        <h3>Bruna Lima</h3>
-        <span>Customer Success</span>
-        <div class="tags"><span class="tag">Onboarding</span><span class="tag">Treinamentos</span></div>
+        <div class="tags"><span class="tag">Business Intelligence</span><span class="tag">Machine Learning</span></div>
       </div>
     </div>
   </section>
