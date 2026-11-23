@@ -35,7 +35,7 @@ Baseada na identidade oficial da marca C12 Technologies:
 | Turquesa | `#00BAB4` | Tecnologia (destaque/ação) |
 | Azul Profundo | `#2F6C82` | Equilíbrio |
 
-- **Tema escuro navy** com acentos em turquesa, seguindo o manual da marca
+- **Fundo branco/claro** com as cores da marca nos detalhes: turquesa `#00BAB4` (ações e destaques), azul profundo `#2F6C82` (menu hambúrguer), azul petróleo `#3E7996` e azul noturno `#2D2E47` (títulos em gradiente e bloco CTA)
 - Tipografia: [Montserrat](https://fonts.google.com/specimen/Montserrat) (títulos e texto), com fallback para fontes de sistema
 - Logo geométrico "C" two-tone (turquesa + azul profundo) em SVG inline e favicon
 - Ícones SVG inline · cards com sombras suaves · micro-animações discretas
