@@ -9,16 +9,48 @@
 
 window.PAGES = window.PAGES || {};
 
-// Menu hambúrguer: recolhe/expande a barra lateral (com memória do estado)
+/* ---------------------------------------------------------
+   Menu hambúrguer
+   · Desktop (>900px): recolhe/expande a sidebar (memória)
+   · Mobile  (≤900px): abre/fecha a gaveta lateral + véu
+   --------------------------------------------------------- */
 (() => {
   const appEl = document.getElementById('app');
-  const burger = document.getElementById('hamburger');
-  if (!appEl || !burger) return;
-  if (localStorage.getItem('c12-menu-recolhido') === '1') appEl.classList.add('collapsed');
-  burger.addEventListener('click', () => {
-    appEl.classList.toggle('collapsed');
-    localStorage.setItem('c12-menu-recolhido', appEl.classList.contains('collapsed') ? '1' : '0');
-  });
+  const burger = document.getElementById('hamburger');           // dentro da sidebar
+  const burgerMobile = document.getElementById('hamburgerMobile'); // topo mobile
+  const backdrop = document.getElementById('backdrop');
+  if (!appEl) return;
+
+  const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
+  const drawerOpen = () => appEl.classList.contains('mobile-open');
+
+  const setDrawer = (open) => {
+    appEl.classList.toggle('mobile-open', open);
+    document.body.style.overflow = (open && isMobile()) ? 'hidden' : '';
+  };
+
+  const toggle = () => {
+    if (isMobile()) {
+      setDrawer(!drawerOpen());
+    } else {
+      appEl.classList.toggle('collapsed');
+      localStorage.setItem('c12-menu-recolhido', appEl.classList.contains('collapsed') ? '1' : '0');
+    }
+  };
+
+  // Estado inicial
+  if (isMobile()) setDrawer(false);
+  else if (localStorage.getItem('c12-menu-recolhido') === '1') appEl.classList.add('collapsed');
+
+  burger && burger.addEventListener('click', toggle);
+  burgerMobile && burgerMobile.addEventListener('click', toggle);
+  backdrop && backdrop.addEventListener('click', () => setDrawer(false));
+
+  // Se a janela cresce, garante fechamento da gaveta
+  window.addEventListener('resize', () => { if (!isMobile()) setDrawer(false); });
+
+  // Exposto para navegação fechar a gaveta ao trocar de página
+  window.C12closeDrawer = () => setDrawer(false);
 })();
 
 const TITLES = {
@@ -41,6 +73,11 @@ function navigate(page) {
   );
   if (location.hash !== "#" + page) history.replaceState(null, "", "#" + page);
   window.scrollTo({ top: 0 });
+
+  // No mobile, fecha a gaveta ao navegar
+  if (window.matchMedia('(max-width: 900px)').matches && window.C12closeDrawer) {
+    window.C12closeDrawer();
+  }
 
   // Hook opcional executado pela página ativa (ex.: interatividade de gráficos)
   if (typeof window.PAGES[page + "_after"] === "function") {

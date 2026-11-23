@@ -638,6 +638,87 @@ table.data-table { width: 100%; border-collapse: collapse; }
   .grid-2, .grid-3, .grid-4, .team-grid, .timeline, .values-grid, .form-grid { grid-template-columns: 1fr; }
   .kpis { grid-template-columns: 1fr 1fr; }
   .flow { grid-template-columns: 1fr; }
-  .content { padding: 20px 16px; }
+  .content { padding: 78px 16px 20px; }
   .site-footer { padding: 14px 16px; }
+  .kpi-value { font-size: 22px; }
+  .section-gap { margin-top: 26px; }
+}
+
+/* ============ 7) MOBILE (≤900px) — MENU EM GAVETA ============ */
+.backdrop { display: none; }
+.mobile-topbar { display: none; }
+
+@media (max-width: 900px) {
+  /* Topo fixo com hambúrguer + marca */
+  .mobile-topbar {
+    display: flex;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 58px;
+    padding: 0 14px;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, .94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 110;
+  }
+  .mobile-topbar .hamburger { width: 38px; height: 38px; min-width: 38px; }
+  .mt-brand { display: flex; align-items: center; gap: 10px; }
+  .mt-txt { display: flex; flex-direction: column; line-height: 1.1; }
+  .mt-name { font-family: var(--font-display); font-weight: 800; font-size: 16px; color: var(--surface-deep); }
+  .mt-name .brand-sec { color: var(--primary); }
+  .mt-sub { font-size: 7.5px; letter-spacing: .32em; color: var(--faint); font-weight: 600; margin-top: 2px; }
+
+  /* Véu atrás da gaveta */
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 45, 61, .52);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+    z-index: 90;
+  }
+  .app.mobile-open .backdrop { opacity: 1; pointer-events: auto; }
+
+  /* Sidebar vira gaveta deslizante */
+  .sidebar {
+    width: min(300px, 85vw);
+    transform: translateX(-105%);
+    transition: transform .28s ease;
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+  }
+  .app.mobile-open .sidebar { transform: translateX(0); }
+
+  /* Neutraliza o estado "recolhido" dentro da gaveta */
+  .app.collapsed .sidebar { width: min(300px, 85vw); }
+  .app.collapsed .brand { display: flex; }
+  .app.collapsed .menu-label { display: block; }
+  .app.collapsed .mi-label { display: inline; }
+  .app.collapsed .sf-txt { display: flex; }
+  .app.collapsed .sidebar-note { display: block; }
+  .app.collapsed .sidebar-top { flex-direction: row; align-items: center; }
+  .app.collapsed .menu-item { justify-content: flex-start; padding: 11px 12px; }
+  .app.collapsed .sidebar-cta { padding: 14px 8px 4px; }
+
+  /* Conteúdo ocupa a tela inteira */
+  .content,
+  .app.collapsed .content,
+  .site-footer,
+  .app.collapsed .site-footer { margin-left: 0; }
+  .content { padding-top: 78px; }
+
+  /* Ajustes de leitura no celular */
+  .hero { padding: 26px 22px; }
+  .hero h1 { font-size: 30px; }
+  .hero-actions .btn { flex: 1 1 auto; }
+  .cta-banner { flex-direction: column; align-items: flex-start; padding: 26px 22px; }
+  .cta-banner .btn-white { width: 100%; }
+  .page-title { font-size: 24px; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }

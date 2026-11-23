@@ -242,6 +242,7 @@ window.PAGES.dashboard = () => {
       <div class="card chart-card">
         <h3>Top 5 produtos</h3>
         <div class="cc-sub">Maiores faturamentos do ano</div>
+        <div class="table-wrap">
         <table class="data-table">
           <thead><tr><th>Produto</th><th>Categoria</th><th class="num">Receita</th><th class="num">vs 2025</th></tr></thead>
           <tbody>
@@ -252,6 +253,7 @@ window.PAGES.dashboard = () => {
             <tr><td>TV OLED 55"</td><td>Eletroportáteis</td><td class="num">R$ 2,4 mi</td><td class="num"><span class="badge badge-bad">▾ -3%</span></td></tr>
           </tbody>
         </table>
+        </div>
       </div>
     </section>
 

@@ -39,6 +39,7 @@ Baseada na identidade oficial da marca C12 Technologies:
 - Tipografia: [Montserrat](https://fonts.google.com/specimen/Montserrat) (títulos e texto), com fallback para fontes de sistema
 - Logo geométrico "C" two-tone (turquesa + azul profundo) em SVG inline e favicon
 - Ícones SVG inline · cards com sombras suaves · micro-animações discretas
+- **Responsivo**: no celular, o menu vira uma gaveta lateral com topo fixo e botão hambúrguer azul profundo (`#2F6C82`)
 
 ## 🗂️ Estrutura do projeto
 
