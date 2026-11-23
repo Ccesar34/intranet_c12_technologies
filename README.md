@@ -45,11 +45,11 @@ Baseada na identidade oficial da marca C12 Technologies:
 
 ```
 intranet/
-├── index.html              # Shell da aplicação + menu + carregamento dos módulos
+├── index.html              # Shell da aplicação + menu + topo mobile + carregamento dos módulos
 ├── css/
-│   └── styles.css          # Design system completo (tokens, componentes, páginas)
+│   └── styles.css          # Design system completo (tokens da marca, componentes, páginas)
 ├── js/
-│   ├── app.js              # Orquestração: navegação por hash, menu hambúrguer, rotas
+│   ├── app.js              # Orquestração: navegação por hash, menu (recolher no desktop, gaveta no mobile), rotas
 │   └── pages/              # 1 módulo por página — totalmente independentes
 │       ├── home.js
 │       ├── solucoes.js
@@ -60,6 +60,8 @@ intranet/
 │       └── contato.js
 ├── assets/
 │   └── favicon.svg
+├── LICENSE
+├── .gitignore
 └── README.md
 ```
 
@@ -75,8 +77,8 @@ independente — para adicionar uma página nova:
 
 Para excluir um módulo, basta remover o script, o item de menu e a linha em `TITLES` — nada mais quebra.
 
-> **Cache-busting:** os arquivos são carregados com sufixo `?v=1`. Ao publicar uma alteração,
-> suba a versão (ex.: `styles.css?v=2`) para todos receberem a novidade sem depender de Ctrl+F5.
+> **Cache-busting:** os arquivos são carregados com sufixo de versão (ex.: `styles.css?v=6`, `app.js?v=3`).
+> Ao publicar uma alteração, suba a versão do arquivo alterado para todos receberem a novidade sem depender de Ctrl+F5.
 
 ## ▶️ Como rodar localmente
 
@@ -95,12 +97,14 @@ Depois acesse `http://localhost:8080`.
 
 ## 🚀 Publicar no GitHub Pages
 
-1. Suba este projeto para um repositório (veja histórico de commits abaixo);
-2. No repositório: **Settings → Pages → Source: Deploy from a branch**;
-3. Escolha a branch `main` e a pasta `/ (root)`;
-4. Em minutos o site estará no ar em `https://SEU-USUARIO.github.io/REPO/`.
+O projeto já está versionado em [github.com/Ccesar34/intranet_c12_technologies](https://github.com/Ccesar34/intranet_c12_technologies).
+Para publicar o site:
 
-Nenhuma etapa de build é necessária.
+1. No repositório: **Settings → Pages → Source: Deploy from a branch**;
+2. Escolha a branch `main` e a pasta `/ (root)`;
+3. Em minutos o site estará no ar em `https://ccesar34.github.io/intranet_c12_technologies/`.
+
+Nenhuma etapa de build é necessária — futuras atualizações vão ao ar a cada `git push` na `main`.
 
 ## 🗺️ Roadmap
 
